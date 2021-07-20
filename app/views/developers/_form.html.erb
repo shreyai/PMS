@@ -1,0 +1,56 @@
+<%= form_with(model: developer) do |form| %>
+  <% if developer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(developer.errors.count, "error") %> prohibited this developer from being saved:</h2>
+
+      <ul>
+        <% developer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projects %>
+    <br>
+    <%= form.collection_check_boxes(:project_ids, Project.all, :id, :name) do |b| %>
+        <%= b.label class: "project-checkbox" do %>
+          <%= b.check_box + b.text %>
+        <% end %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-sm btn-success" %>
+  </div>
+<% end %>
+
+<style type="text/css">
+  .project-checkbox {
+    margin: 10px;
+  }
+  .project-checkbox input {
+    margin: 10px;
+  }
+</style>

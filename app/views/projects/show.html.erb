@@ -1,0 +1,16 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @project.name %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @project.status %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-sm btn-warning text-white" %> |
+  <%= link_to 'Back', projects_path, class: "btn btn-sm btn-dark text-white" %>
+</div>

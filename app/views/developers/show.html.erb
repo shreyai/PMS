@@ -1,0 +1,26 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @developer.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @developer.email %>
+  </p>
+
+  <p>
+    <strong>Position:</strong>
+    <%= @developer.position %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @developer.title %>
+  </p>
+
+  <%= link_to 'Edit', edit_developer_path(@developer), class: "btn btn-sm btn-warning text-white" %> |
+  <%= link_to 'Back', developers_path, class: "btn btn-sm btn-dark text-white" %>
+</div>
